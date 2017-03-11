@@ -1,0 +1,2 @@
+# rate-widget
+Rating widget
