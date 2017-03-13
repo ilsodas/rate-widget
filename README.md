@@ -7,6 +7,8 @@ GET - Get the dat on the admin page
 
 PUT - Do updates
 
+
+## CREATE Database table
 ```bash
 CREATE TABLE `rate` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
