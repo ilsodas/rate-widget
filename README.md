@@ -1,3 +1,10 @@
+## My Custom PHP API
+The following request are valid on the API (ratings.php)
+
+POST - To send the data from the form
+GET - Get the dat on the admin page
+PUT - Do updates
+
 ## Angular CLI
 
 CLI for Angular applications based on the [ember-cli](http://www.ember-cli.com/) project.
