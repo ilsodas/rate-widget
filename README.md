@@ -7,6 +7,19 @@ GET - Get the dat on the admin page
 
 PUT - Do updates
 
+```bash
+CREATE TABLE `rate` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `message` text,
+  `rating` int(10) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `rated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+```
+
 ## Angular CLI
 
 CLI for Angular applications based on the [ember-cli](http://www.ember-cli.com/) project.
