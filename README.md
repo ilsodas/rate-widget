@@ -1,2 +1,1 @@
-# rate-widget
-Rating widget
+README

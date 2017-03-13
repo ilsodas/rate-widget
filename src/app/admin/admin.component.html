@@ -1,0 +1,77 @@
+<app-topnav></app-topnav>
+<div class="container">
+  <h1>Admin pannel</h1>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <br />
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <aside class="sm-side">
+              <ul class="inbox-nav inbox-divider">
+                  <li class="">
+                      <a><i class="fa fa-inbox"></i> Total ratings <span class="label label-danger pull-right">{{read+notRead}}</span></a>
+                  </li>
+                  <li>
+                      <a (click)="toggleReadState(1, $event)"  href="#"><i class="fa fa-folder-open"></i> Read Ratings <span class="label label-danger pull-right">{{read}}</span></a>
+                  </li>
+                  <li>
+                      <a (click)="toggleReadState(0, $event)" href="#"><i class="fa fa-envelope-o"></i> Unead Ratings <span class="label label-danger pull-right">{{notRead}}</span></a>
+                  </li>
+              </ul>
+              <div class="panel">
+          			<div class="panel-body">
+          				<p id="average-rating-p"><span class="glyphicon glyphicon-star"></span> Average rating: <span>{{averageRating}}</span></p>
+          			</div>
+          		</div>
+          </aside>
+        </div>
+        <div class="col-sm-8 col-md-9">
+            <!-- Tab panes -->
+            <div id="admin-panel" class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <div class="list-group">
+                      <a class="list-group-item heading">
+                            <span class="col-md-2 name">Name: </span>
+                            <span class="col-md-2 email">Email:</span>
+                            <span class="col-md-4 comment">Comment</span>
+                            <span class="col-md-1 rating">Rating:</span>
+                              <span class="col-md-2 pull-right date">Date:</span>
+                        </a>
+                      <div *ngIf="showAll">
+                          <div class="" *ngFor="let rating of ratingsContent">
+                            <a  href="#" class="list-group-item">
+                                  <span class="col-md-2 name">{{rating.name}}</span>
+                                  <span class="col-md-2 email">{{rating.email}}</span>
+                                  <span class="col-md-3 comment">{{rating.message}}</span>
+                                  <span class="col-md-1 rating">{{rating.rating}} <span class="glyphicon glyphicon-star"></span></span>
+                                  <span class="col-md-2 badge date">{{rating.date | date: 'd MMM, H:m'}}</span>
+                              </a>
+                          </div>
+                        </div>
+                        <div *ngIf="showUnRead">
+                            <div class="" *ngFor="let rating of ratingsContentNotRead">
+                              <a (click)="messageRead(rating.id, $event)" href="#" class="list-group-item">
+                                    <span class="col-md-2 name">{{rating.name}}</span>
+                                    <span class="col-md-2 email">{{rating.email}}</span>
+                                    <span class="col-md-4 comment">{{rating.message}}</span>
+                                    <span class="col-md-1 rating">{{rating.rating}} <span class="glyphicon glyphicon-star"></span></span>
+                                    <span class="col-md-2 badge date">{{rating.date | date: 'd MMM, H:m'}}</span>
+                                </a>
+                            </div>
+                          </div>
+                          <div *ngIf="showRead">
+                              <div class="" *ngFor="let rating of ratingsContentRead">
+                                <a (click)="unRead(rating.id, $event)" href="#" class="list-group-item">
+                                      <span class="col-md-2 name">{{rating.name}}</span>
+                                      <span class="col-md-2 email">{{rating.email}}</span>
+                                      <span class="col-md-4 comment">{{rating.message}}</span>
+                                      <span class="col-md-1 rating">{{rating.rating}} <span class="glyphicon glyphicon-star"></span></span>
+                                      <span class="col-md-2 badge date">{{rating.date | date: 'd MMM, H:m'}}</span>
+                                  </a>
+                              </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

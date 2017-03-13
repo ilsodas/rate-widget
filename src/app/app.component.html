@@ -1,0 +1,36 @@
+<app-topnav></app-topnav>
+<div class="container">
+  <div class="form-group feedback">{{formErrors.message }}</div>
+  <button *ngIf="!!isFormOpen" (click)="openRatingForm()" id="openRatingForm" class="btn btn-danger">{{btnText}}</button>
+    <div class="col-md-12" id="RateWidgetFormWrapper">
+      <form *ngIf="!isFormOpen" class="form-block">
+        <div class="form-group">
+          <label class="required" for="Name">Name</label>
+          <input [(ngModel)]="name" name="name" type="text" class="form-control" id="Name" placeholder="Please enter your name" required>
+        </div>
+        <div class="form-group">
+          <label class="required" for="Email">Email address</label>
+          <input [(ngModel)]="emailAddress"  name="email" type="email" class="form-control" id="Email" placeholder="Please enter your email" required>
+        </div>
+        <div class="form-group">
+          <label class="required" for="Comment">Comment</label>
+          <textarea [(ngModel)]="comment"  name="comment" class="form-control" id="Comment" rows="4" cols="50" placeholder="Please enter your comment here..." required></textarea>
+        </div>
+        <div class="form-group pull-left">
+  				<div class="ratingStarts">
+  					<div class="pull-left">
+  		  				<i (click)="rateService($event)" id="1" class="glyphicon stars glyphicon-star-empty"></i>
+  		  				<i (click)="rateService($event)" id="2" class="glyphicon stars glyphicon-star-empty"></i>
+  		  				<i (click)="rateService($event)" id="3" class="glyphicon stars glyphicon-star-empty"></i>
+  		  				<i (click)="rateService($event)" id="4" class="glyphicon stars glyphicon-star-empty"></i>
+  		  				<i (click)="rateService($event)" id="5" class="glyphicon stars glyphicon-star-empty"></i>
+  		  			</div>
+              <span id="ratingValue" *ngIf="ratingValue">( {{ratingValue}} )</span>
+  	  			</div>
+  			</div>
+  		  <button (click)="sendRatingData()" type="submit" class="pull-right btn btn-danger">Send</button>
+      </form>
+
+    </div>
+ <modal-component [ratingResponse]="ratingResponse"></modal-component>
+</div>

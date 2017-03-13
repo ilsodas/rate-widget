@@ -1,0 +1,24 @@
+.widget{box-shadow: 5px 4px 4px #eee, 1px 0 23px #fff;}
+#ratingHeading{margin:0 5px;font-size: 23px;padding:15px 0px;}
+i#icon{top: 4px !important}
+#openRatingForm{font-size: 24px;letter-spacing: 4px}
+.bold{font-weight: bold;color:#000;font-style: italic;}
+.feedback {color:red;font-size: 16px;text-align: center;}
+.form-group label, .ratingStarts h3 {font-size: 19px;}
+#emailAddressField{font-size: 22px;padding:5px inherit;}
+#average-rating-p{font-size: 14px;}
+#exampleTextarea{resize: vertical;height:auto;min-height: 100px;font-size: 20px;font-weight: 300;}
+button[type="submit"]{font-size: 22px;}
+.ratingStarts i {font-size: 34px;color:#d9534f;cursor: pointer;-webkit-transition:all 0.42s;-moz-transition:all 0.42s;transition:all 0.42s;
+}
+label {
+	font-size: 20px;
+	margin-bottom:10px;
+}
+.well{background-color:#fff;}
+.ratingStarts h3 {
+	margin-top:0;
+}
+.ratingStarts i:hover, .active {text-shadow:0px 0 8px #d9534f, 0px -2px 6px #ddd;}
+#ratingValue{font-weight: 900;}
+p, h3, h1, label, input, button, textarea{font-family: 'Roboto', sans-serif;font-weight:300;}
